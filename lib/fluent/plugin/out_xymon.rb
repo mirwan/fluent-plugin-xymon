@@ -58,7 +58,7 @@ module Fluent
       
       color ||= @color
       body = "#{@name_key}=#{value}"
-      message = "status #{record[@hostname]}.#{record[@testname].gsub! '\.', '_'} #{color} #{Time.at(time)} #{@testname} #{body}\n\n#{body}"
+      message = "status #{record[@hostname]}.#{record[@testname].gsub(/\./, '_')} #{color} #{Time.at(time)} #{@testname} #{body}\n\n#{body}"
 
       message
     end
